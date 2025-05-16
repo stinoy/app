@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: admin-portal
-        image: nginx:latest
+        image: public.ecr.aws/k9a0m9b4/stinoy:latest
         ports:
         - containerPort: 80
+
