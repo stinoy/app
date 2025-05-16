@@ -4,13 +4,8 @@ metadata:
   name: admin-ingress
   namespace: app
   annotations:
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-west-1:183631321229:certificate/b40848e2-5e4d-4770-a6c2-f0f7e60872f9
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/ssl-redirect: '443'
-    alb.ingress.kubernetes.io/target-type: ip
+    kubernetes.io/ingress.class: nginx
 spec:
-  ingressClassName: alb
   rules:
     - host: app1.ajml.online
       http:
