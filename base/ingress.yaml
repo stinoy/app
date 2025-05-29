@@ -13,7 +13,7 @@ spec:
     - app1.ajml.online
     secretName: admin-tls-secret
   rules:
-  - host: app1.ajml.online
+  - host: app3.ajml.online
     http:
       paths:
       - path: /
