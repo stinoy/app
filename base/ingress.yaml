@@ -4,13 +4,17 @@ metadata:
   name: admin-ingress
   namespace: app
   annotations:
-    kubernetes.io/ingress.class: nginx
-    cert-manager.io/cluster-issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/group.name: app-ingress-group
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:183631321229:certificate/37cb2c34-485d-47d8-9c8a-05d306be1b6b
 spec:
-  ingressClassName: nginx
+  ingressClassName: alb
   tls:
   - hosts:
-    - app1.ajml.online
+    - app3.ajml.online
     secretName: admin-tls-secret
   rules:
   - host: app3.ajml.online
