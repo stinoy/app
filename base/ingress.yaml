@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: admin-ingress
-  namespace: app
+  namespace: app1
   annotations:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/scheme: internet-facing
@@ -14,10 +14,10 @@ spec:
   ingressClassName: alb
   tls:
   - hosts:
-    - app3.ajml.online
+    - app.ajml.online
     secretName: admin-tls-secret
   rules:
-  - host: app3.ajml.online
+  - host: app.ajml.online
     http:
       paths:
       - path: /
