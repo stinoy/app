@@ -17,7 +17,7 @@ spec:
     - app.ajml.online
     secretName: admin-tls-secret
   rules:
-  - host: app4.ajml.online
+  - host: app5.ajml.online
     http:
       paths:
       - path: /
